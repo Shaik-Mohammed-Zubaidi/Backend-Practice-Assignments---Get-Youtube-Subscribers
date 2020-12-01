@@ -15,4 +15,4 @@ const refreshAll = async () => {
     await subscriberModel.insertMany(data)
     await mongoose.disconnect();
 }
-refreshAll()
+refreshAll().then(_=> console.log("database created")).catch(err=> console.log("error: ",err));
